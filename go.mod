@@ -1,6 +1,6 @@
 module github.com/bgentry/que-go
 
-go 1.14
+go 1.16
 
 require (
 	github.com/jackc/pgconn v1.6.4

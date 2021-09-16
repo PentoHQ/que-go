@@ -7,7 +7,7 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: debian:jessie
+    container: golang:1.16
     env:
       PG_CONN_STRING: "postgres://postgres:postgres@postgres/que_go_test"
 
