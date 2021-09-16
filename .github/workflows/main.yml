@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Install postgres
-        run: apt-get install postgres
+        run: apt-get update && apt-get install postgres
         
       - name: Check out repository code
         uses: actions/checkout@v2
