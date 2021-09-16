@@ -8,6 +8,8 @@ jobs:
   container-job:
     runs-on: ubuntu-latest
     container: debian:jessie
+    env:
+      PG_CONN_STRING: "postgres://postgres:postgres@postgres/que_go_test"
 
     services:
       postgres:
@@ -30,7 +32,7 @@ jobs:
 
 
       - name: Run Schema
-        run: psql "postgres://postgres:postgres@localhost/que_go_test" -f schema.sql
+        run: psql "$PG_CONN_STRING" -f schema.sql
 
 
       - name: Test
