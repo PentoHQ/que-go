@@ -7,7 +7,7 @@ on: push
 jobs:
   container-job:
     runs-on: ubuntu-latest
-    container: node:10.18-jessie
+    container: debian:jessie
 
     services:
       postgres:
@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Install postgres
-        run: apt-get update && apt-get install postgres
+        run: apt-get update && apt-get install postgresql
         
       - name: Check out repository code
         uses: actions/checkout@v2
